@@ -1,0 +1,39 @@
+site:
+    name: RECAS-BARI
+    country: Italy
+    country_code: IT
+    roc: NGI_IT
+    subgrid: SUBGRID 
+    giis_url: "ldap://cloud-bdii.recas.ba.infn.it:2170/GLUE2DomainID=RECAS-BARI,o=glue"
+    is_public: False
+
+compute:
+    accelerators:
+        vendor: nvidia
+        model: 1080TI # TITANX, TITANXSND
+    endpoints:
+        defaults:
+            total_cores: 30
+        https://mesos.recas.ba.infn.it/marathon:
+            service_parent_id: https://mesos.recas.ba.infn.it/mesos
+            load_balancer_ips: [mesos-lb.recas.ba.infn.it]
+            local_volumes_host_base_path: /tmp
+            persistent_storage_drivers: []
+        https://mesos.recas.ba.infn.it/chronos:
+            service_parent_id: https://mesos.recas.ba.infn.it/mesos
+            local_volumes_host_base_path: /tmp
+            # chronos API does not provide GPU support information (so >0 if 
+            # GPU-enabled)
+            total_accelerators: 1 
+        https://cloud-90-147-75-191.cloud.ba.infn.it/chronos:
+            service_parent_id: https://cloud-90-147-75-191.cloud.ba.infn.it/mesos
+            local_volumes_host_base_path: /tmp
+            # not GPU-enabled
+            total_accelerators: 0 
+        https://cloud-90-147-75-191.cloud.ba.infn.it/marathon:
+            service_parent_id: https://cloud-90-147-75-191.cloud.ba.infn.it/mesos
+            load_balancer_ips: [90.147.170.127]
+            local_volumes_host_base_path: /tmp
+            persistent_storage_drivers: [rexray]
+            # not GPU-enabled
+            total_accelerators: 0 

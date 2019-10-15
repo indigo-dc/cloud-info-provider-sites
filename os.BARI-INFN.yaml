@@ -1,0 +1,50 @@
+site:
+    name: BARI-INFN
+    id: provider-BARI-INFN
+    is_public: false
+    country: Italy
+    country_code: IT
+    roc: NGI_IT
+    subgrid: SUBGRID 
+    giis_url: "ldap://cloud-bdii.recas.ba.infn.it:2170/GLUE2DomainID=RECAS-BARI,o=glue"
+
+compute:
+    total_cores: 0
+    total_ram: 0
+    max_dedicated_ram: 0
+    min_dedicated_ram: 0
+    accelerators_virt_type: UNKNOWN
+    total_accelerators: 0
+    max_accelerators: 0
+    min_accelerators: 0
+    hypervisor: UNKNOWN
+    hypervisor_version: UNKNOWN
+    service_production_level: production
+    capabilities:
+        - executionmanagement.dynamicvmdeploy
+        - security.accounting
+    failover: false
+    live_migration: false
+    vm_backup_restore: false
+    endpoints:
+        defaults:
+            middleware_version: Pike
+            api_endpoint_technology: webservice
+            api_authn_method: X509-VOMS
+            production_level: production
+    shares:
+        DEEP_DEMO:
+            auth:
+                project_id: 78d9ecb64353402bb621b569891c633a
+    templates:
+        defaults:
+            platform: amd64
+            network: public
+            network_in: undefined
+            network_out: true
+    images:
+        defaults:
+            platform: amd64
+            gpu_driver: 'NA'
+            gpu_cuda_driver: 'NA'
+            gpu_cudnn_driver: 'NA'
