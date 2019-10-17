@@ -30,7 +30,7 @@ cloud-info-provider-service \
     --os-project-domain-name default \
     --middleware openstack \
     --format cmdb \
-    --yaml-file /root/cloud-info-provider-sites/os.BARI-INFN.yaml \
+    --yaml-file /root/cloud-info-provider-sites/os.RECAS-BARI.yaml \
     --template-dir /root/cloud-info-provider-deep/etc/templates/
 #    | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
 #                    --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
@@ -49,7 +49,7 @@ for endpoint in mesos marathon chronos; do
         --mesos-framework $endpoint \
         --mesos-endpoint https://mesos.recas.ba.infn.it/${endpoint} \
         --oidc-auth-bearer-token $IAM_ACCESS_TOKEN \
-        --yaml-file /root/cloud-info-provider-sites/mesos.BARI-INFN.yaml \
+        --yaml-file /root/cloud-info-provider-sites/mesos.RECAS-BARI.yaml \
         --template-dir /root/cloud-info-provider-deep/etc/templates/
 #        | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
 #                        --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \

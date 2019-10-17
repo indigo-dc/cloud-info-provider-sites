@@ -1,6 +1,6 @@
 site:
-    name: BARI-INFN
-    id: provider-BARI-INFN
+    name: RECAS-BARI
+    id: provider-RECAS-BARI
     is_public: false
     country: Italy
     country_code: IT
@@ -44,7 +44,8 @@ compute:
             network_out: true
     images:
         defaults:
-            platform: amd64
+            os_type: Linux
+            architecture: x86_64
             gpu_driver: 'NA'
             gpu_cuda_driver: 'NA'
             gpu_cudnn_driver: 'NA'
