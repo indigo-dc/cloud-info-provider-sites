@@ -37,6 +37,7 @@ compute:
             auth:
                 project_id: 36fb9668c47148d9b1bedba88eb2460a 
             network_info: infiniband
+            iam_organisation: deep-hdc
     templates:
         defaults:
             platform: amd64

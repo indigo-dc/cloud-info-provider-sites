@@ -36,6 +36,7 @@ compute:
         DEEP_DEMO:
             auth:
                 project_id: 78d9ecb64353402bb621b569891c633a
+            iam_organisation: deep-hdc
     templates:
         defaults:
             platform: amd64
