@@ -56,30 +56,30 @@ for endpoint in mesos marathon chronos; do
     echo ""
 done
 
-#echo "***** IFCA-LCG2 *****"
-#echo "Getting OpenStack data from https://api.cloud.ifca.es:5000/v3.."
-#
-### [IFCA-LCG2] CIP:Openstack with OIDC token
-#cloud-info-provider-service \
-#    --insecure \
-#    --os-auth-type v3oidcaccesstoken \
-#    --os-protocol openid \
-#    --os-identity-provider deep-hdc \
-#    --os-access-token $IAM_ACCESS_TOKEN \
-#    --os-auth-url https://api.cloud.ifca.es:5000/v3 \
-#    --os-project-domain-name default \
-#    --os-tenant-name deep-hybrid-datacloud.eu \
-#    --middleware openstack \
-#    --format cmdb \
-#    --all-images \
-#    --property-flavor-gpu-number gpu:number  \
-#    --property-flavor-gpu-vendor gpu:vendor \
-#    --property-flavor-gpu-model gpu:model \
-#    --property-image-gpu-driver gpu:driver:version \
-#    --property-image-gpu-cuda gpu:cuda:version \
-#    --property-image-gpu-cudnn gpu:cudnn:version \
-#    --yaml-file /root/cloud-info-provider-sites/os.IFCA-LCG2.yaml \
-#    --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
-#                                                                                 --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
-#                                                                                 --cmdb-db-user $CMDB_USER \
-#                                                                                 --cmdb-db-pass $CMDB_PASS
+echo "***** IFCA-LCG2 *****"
+echo "Getting OpenStack data from https://api.cloud.ifca.es:5000/v3.."
+
+## [IFCA-LCG2] CIP:Openstack with OIDC token
+cloud-info-provider-service \
+    --insecure \
+    --os-auth-type v3oidcaccesstoken \
+    --os-protocol openid \
+    --os-identity-provider deep-hdc \
+    --os-access-token $IAM_ACCESS_TOKEN \
+    --os-auth-url https://api.cloud.ifca.es:5000/v3 \
+    --os-project-domain-name default \
+    --os-tenant-name deep-hybrid-datacloud.eu \
+    --middleware openstack \
+    --format cmdb \
+    --all-images \
+    --property-flavor-gpu-number gpu:number  \
+    --property-flavor-gpu-vendor gpu:vendor \
+    --property-flavor-gpu-model gpu:model \
+    --property-image-gpu-driver gpu:driver:version \
+    --property-image-gpu-cuda gpu:cuda:version \
+    --property-image-gpu-cudnn gpu:cudnn:version \
+    --yaml-file /root/cloud-info-provider-sites/os.IFCA-LCG2.yaml \
+    --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
+                                                                                 --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
+                                                                                 --cmdb-db-user $CMDB_USER \
+                                                                                 --cmdb-db-pass $CMDB_PASS
