@@ -1,0 +1,23 @@
+site:
+    name: IFCA-LCG2
+    id: provider-IFCA-LCG2
+    is_public: false
+    country: Spain
+    country_code: ES
+    roc: NGI_IBERGRID
+    giis_url: "ldap://gridiis01.ifca.es:2170/GLUE2DomainID=IFCA-LCG2,o=glue"
+
+compute:
+    accelerators:
+        vendor: nvidia
+        model: 1080TI # TITANX, TITANXSND
+    endpoints:
+        defaults:
+            total_cores: 30
+        https://mesos.cloud.ifca.es/mesos:
+            service_parent_id: https://mesos.cloud.ifca.es/mesos
+        https://mesos.cloud.ifca.es/marathon:
+            service_parent_id: https://mesos.cloud.ifca.es/mesos
+            load_balancer_ips: [193.146.75.183]
+            local_volumes_host_base_path: /tmp
+            persistent_storage_drivers: []

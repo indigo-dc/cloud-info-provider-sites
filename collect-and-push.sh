@@ -14,6 +14,11 @@ die () {
 CMDB_USER=$1
 CMDB_PASS=$2
 
+
+################
+## RECAS-BARI ##
+################
+
 echo "***** RECAS-BARI *****"
 echo "Getting OpenStack data from https://cloud.recas.ba.infn.it:5000/v3.."
 
@@ -56,6 +61,11 @@ for endpoint in mesos marathon chronos; do
     echo ""
 done
 
+
+###############
+## IFCA-LCG2 ##
+###############
+
 echo "***** IFCA-LCG2 *****"
 echo "Getting OpenStack data from https://api.cloud.ifca.es:5000/v3.."
 
@@ -83,3 +93,21 @@ cloud-info-provider-service \
                                                                                  --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
                                                                                  --cmdb-db-user $CMDB_USER \
                                                                                  --cmdb-db-pass $CMDB_PASS
+
+## [IFCA-LCG2] CIP:Mesos with OIDC token
+for endpoint in mesos marathon chronos; do
+    echo "Getting Mesos data from https://mesos.cloud.ifca.es/${endpoint}.."
+    cloud-info-provider-service \
+        --middleware mesos \
+        --format cmdb \
+        --mesos-cacert /etc/ssl/certs \
+        --mesos-framework $endpoint \
+        --mesos-endpoint https://mesos.cloud.ifca.es/${endpoint} \
+        --oidc-auth-bearer-token $IAM_ACCESS_TOKEN \
+        --yaml-file /root/cloud-info-provider-sites/mesos.IFCA-LCG2.yaml \
+        --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
+                                                                                     --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
+                                                                                     --cmdb-db-user $CMDB_USER \
+                                                                                     --cmdb-db-pass $CMDB_PASS
+    echo ""
+done
