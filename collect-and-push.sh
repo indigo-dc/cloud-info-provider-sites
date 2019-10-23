@@ -136,3 +136,28 @@ done
 #                                                                                     --cmdb-db-pass $CMDB_PASS
 #    echo ""
 #done
+
+
+######################
+## IISAS-Bratislava ##
+######################
+#
+#echo "***** IISAS-Bratislava *****"
+#
+### [IISAS-Bratislava] CIP:Mesos with OIDC token
+#for endpoint in marathon chronos; do
+#    echo "Getting Mesos data from https://mesos.ui.sav.sk/${endpoint}.."
+#    cloud-info-provider-service \
+#        --middleware mesos \
+#        --format cmdb \
+#        --mesos-cacert /etc/ssl/certs \
+#        --mesos-framework $endpoint \
+#        --mesos-endpoint https://mesos.ui.sav.sk/${endpoint} \
+#        --oidc-auth-bearer-token $IAM_ACCESS_TOKEN \
+#        --yaml-file /root/cloud-info-provider-sites/mesos.IISAS-Bratislava.yaml \
+#        --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
+#                                                                                     --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
+#                                                                                     --cmdb-db-user $CMDB_USER \
+#                                                                                     --cmdb-db-pass $CMDB_PASS
+#    echo ""
+#done

@@ -1,0 +1,26 @@
+site:
+    name: IISAS-Bratislava
+    id: provider-IISAS-Bratislava
+    is_public: false
+    country: Slovakia
+    country_code: SK
+    roc: NGI_SK
+    giis_url: "ldap://sbdii.ui.savba.sk:2170/Mds-Vo-name=IISAS-Bratislava,o=grid"
+
+compute:
+    accelerators:
+        vendor: nvidia
+        model: 1080TI # TITANX, TITANXSND
+    endpoints:
+        defaults:
+            total_cores: 30
+        https://mesos.ui.sav.sk/marathon:
+            service_parent_id: https://mesos.ui.sav.sk/mesos
+            load_balancer_ips: [147.213.75.181]
+            local_volumes_host_base_path: /tmp
+        https://mesos.ui.sav.sk/chronos:
+            service_parent_id: https://mesos.ui.sav.sk/mesos
+            local_volumes_host_base_path: /tmp
+            # chronos API does not provide GPU support information (so >0 if 
+            # GPU-enabled)
+            total_accelerators: 1 
