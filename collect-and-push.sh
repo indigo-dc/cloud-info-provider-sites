@@ -111,3 +111,28 @@ for endpoint in mesos marathon chronos; do
                                                                                      --cmdb-db-pass $CMDB_PASS
     echo ""
 done
+
+
+###########
+### PSNC ##
+###########
+#
+#echo "***** PSNC *****"
+#
+### [PSNC] CIP:Mesos with OIDC token
+#for endpoint in marathon chronos; do
+#    echo "Getting Mesos data from https://cereus.man.poznan.pl/api-${endpoint}.."
+#    cloud-info-provider-service \
+#        --middleware mesos \
+#        --format cmdb \
+#        --mesos-cacert /etc/ssl/certs \
+#        --mesos-framework $endpoint \
+#        --mesos-endpoint https://cereus.man.poznan.pl/api-${endpoint} \
+#        --oidc-auth-bearer-token $IAM_ACCESS_TOKEN \
+#        --yaml-file /root/cloud-info-provider-sites/mesos.PSNC.yaml \
+#        --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
+#                                                                                     --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
+#                                                                                     --cmdb-db-user $CMDB_USER \
+#                                                                                     --cmdb-db-pass $CMDB_PASS
+#    echo ""
+#done

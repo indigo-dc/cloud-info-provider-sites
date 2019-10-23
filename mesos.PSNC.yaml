@@ -1,0 +1,27 @@
+site:
+    name: PSNC
+    id: provider-PSNC
+    is_public: false
+    country: Poland
+    country_code: PL
+    roc: NGI_PL
+    giis_url: "ldap://bdii.reef.man.poznan.pl:2170/Mds-Vo-name=PSNC,o=grid"
+
+compute:
+    accelerators:
+        vendor: nvidia
+        model: 1080TI # TITANX, TITANXSND
+    endpoints:
+        defaults:
+            total_cores: 30
+        https://cereus.man.poznan.pl/api-chronos:
+            service_parent_id: https://cereus.man.poznan.pl/mesos
+            local_volumes_host_base_path: /tmp
+            # chronos API does not provide GPU support information (so >0 if 
+            # GPU-enabled)
+            total_accelerators: 1 
+        https://cereus.man.poznan.pl/api-marathon:
+            service_parent_id: https://cereus.man.poznan.pl/mesos
+            load_balancer_ips: [150.254.198.9]
+            local_volumes_host_base_path: /tmp
+            persistent_storage_drivers: [rexray]
