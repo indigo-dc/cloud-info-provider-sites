@@ -28,14 +28,14 @@ compute:
             # chronos API does not provide GPU support information (so >0 if 
             # GPU-enabled)
             total_accelerators: 1 
-        https://cloud-90-147-75-191.cloud.ba.infn.it/chronos:
-            service_parent_id: https://cloud-90-147-75-191.cloud.ba.infn.it/mesos
+        https://mesos.cloud.ba.infn.it/chronos:
+            service_parent_id: https://mesos.cloud.ba.infn.it/mesos
             local_volumes_host_base_path: /tmp
             # not GPU-enabled
             total_accelerators: 0 
-        https://cloud-90-147-75-191.cloud.ba.infn.it/marathon:
-            service_parent_id: https://cloud-90-147-75-191.cloud.ba.infn.it/mesos
-            load_balancer_ips: [90.147.170.127]
+        https://mesos.cloud.ba.infn.it/marathon:
+            service_parent_id: https://mesos.cloud.ba.infn.it/mesos
+            load_balancer_ips: [mesos-lb.cloud.ba.infn.it]
             local_volumes_host_base_path: /tmp
             persistent_storage_drivers: [rexray]
             # not GPU-enabled
