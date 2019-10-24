@@ -7,6 +7,9 @@ site:
     roc: NGI_IT
     subgrid: SUBGRID 
     giis_url: "ldap://cloud-bdii.recas.ba.infn.it:2170/GLUE2DomainID=RECAS-BARI,o=glue"
+    owner_contacts:
+        - marica.antonacci@ba.infn.it
+        - ds@lists.cnaf.infn.it
 
 compute:
     total_cores: 0

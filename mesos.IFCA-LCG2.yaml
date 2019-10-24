@@ -6,6 +6,9 @@ site:
     country_code: ES
     roc: NGI_IBERGRID
     giis_url: "ldap://gridiis01.ifca.es:2170/GLUE2DomainID=IFCA-LCG2,o=glue"
+    owner_contacts:
+        - aidaph@ifca.unican.es
+        - ds@lists.cnaf.infn.it
 
 compute:
     accelerators:

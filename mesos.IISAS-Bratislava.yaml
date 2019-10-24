@@ -6,6 +6,9 @@ site:
     country_code: SK
     roc: NGI_SK
     giis_url: "ldap://sbdii.ui.savba.sk:2170/Mds-Vo-name=IISAS-Bratislava,o=grid"
+    owner_contacts:
+        - tdviet@gmail.com
+        - ds@lists.cnaf.infn.it
 
 compute:
     accelerators:

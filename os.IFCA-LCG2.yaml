@@ -7,6 +7,9 @@ site:
     roc: NGI_IBERGRID
     subgrid: SUBGRID 
     giis_url: "ldap://gridiis01.ifca.es:2170/GLUE2DomainID=IFCA-LCG2,o=glue"
+    owner_contacts:
+        - aidaph@ifca.unican.es
+        - ds@lists.cnaf.infn.it
 
 compute:
     total_cores: 0

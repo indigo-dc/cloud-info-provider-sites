@@ -6,6 +6,9 @@ site:
     country_code: PL
     roc: NGI_PL
     giis_url: "ldap://bdii.reef.man.poznan.pl:2170/Mds-Vo-name=PSNC,o=grid"
+    owner_contacts:
+        - fblicharczyk@man.poznan.pl
+        - ds@lists.cnaf.infn.it
 
 compute:
     accelerators:

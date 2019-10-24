@@ -6,6 +6,9 @@ site:
     subgrid: SUBGRID 
     giis_url: "ldap://cloud-bdii.recas.ba.infn.it:2170/GLUE2DomainID=RECAS-BARI,o=glue"
     is_public: False
+    owner_contacts:
+        - marica.antonacci@ba.infn.it
+        - ds@lists.cnaf.infn.it
 
 compute:
     accelerators:
