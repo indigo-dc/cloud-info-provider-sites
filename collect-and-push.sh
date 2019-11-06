@@ -95,7 +95,7 @@ cloud-info-provider-service \
                                                                                  --cmdb-db-pass $CMDB_PASS
 
 ## [IFCA-LCG2] CIP:Mesos with OIDC token
-for endpoint in mesos marathon chronos; do
+for endpoint in mesos marathon; do
     echo "Getting Mesos data from https://mesos.cloud.ifca.es/${endpoint}.."
     cloud-info-provider-service \
         --middleware mesos \
