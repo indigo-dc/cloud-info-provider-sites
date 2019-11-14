@@ -1,0 +1,53 @@
+site:
+    name: INFN_DEEP
+    id: provider-CNAF
+    is_public: false
+    country: Italy
+    country_code: IT
+    roc: NGI_IT
+    owner_contacts:
+        - cristina.aiftimiei@cnaf.infn.it
+        - ds@lists.cnaf.infn.it
+
+compute:
+    total_cores: 0
+    total_ram: 0
+    max_dedicated_ram: 0
+    min_dedicated_ram: 0
+    accelerators_virt_type: UNKNOWN
+    total_accelerators: 0
+    max_accelerators: 0
+    min_accelerators: 0
+    hypervisor: UNKNOWN
+    hypervisor_version: UNKNOWN
+    service_production_level: production
+    capabilities:
+        - executionmanagement.dynamicvmdeploy
+        - security.accounting
+    failover: false
+    live_migration: false
+    vm_backup_restore: false
+    endpoints:
+        defaults:
+            middleware_version: Mitaka
+            api_endpoint_technology: webservice
+            api_authn_method: X509-VOMS
+            production_level: production
+    shares:
+        DEEP:
+            auth:
+                project_id: 498783f2b70848bd9b8bc1aa69700a89
+            iam_organisation: deep-hdc
+    templates:
+        defaults:
+            platform: x86_64
+            network: public
+            network_in: undefined
+            network_out: true
+    images:
+        defaults:
+            os_type: Linux
+            architecture: x86_64
+            gpu_driver: 'NA'
+            gpu_cuda_driver: 'NA'
+            gpu_cudnn_driver: 'NA'
