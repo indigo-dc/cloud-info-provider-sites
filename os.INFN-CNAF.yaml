@@ -8,6 +8,8 @@ site:
     owner_contacts:
         - cristina.aiftimiei@cnaf.infn.it
         - ds@lists.cnaf.infn.it
+    owner_contacts_iam:
+        - a9135044-576f-4716-882a-1e0d57ec6a8a
 
 compute:
     total_cores: 0

@@ -9,6 +9,8 @@ site:
     owner_contacts:
         - marica.antonacci@ba.infn.it
         - ds@lists.cnaf.infn.it
+    owner_contacts_iam:
+        - f296fd17-3a66-4ba4-a06a-e1face1e0452
 
 compute:
     accelerators:

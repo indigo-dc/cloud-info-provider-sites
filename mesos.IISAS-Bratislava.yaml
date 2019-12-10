@@ -9,6 +9,8 @@ site:
     owner_contacts:
         - tdviet@gmail.com
         - ds@lists.cnaf.infn.it
+    owner_contacts_iam:
+        - 484f8033-ef66-45d7-9638-61a537c2dc28
 
 compute:
     accelerators:

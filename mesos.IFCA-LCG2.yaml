@@ -9,6 +9,10 @@ site:
     owner_contacts:
         - aidaph@ifca.unican.es
         - ds@lists.cnaf.infn.it
+    owner_contacts_iam:
+        - 71d1aa69-f13a-4c7f-a90a-319936fd3db4
+        - ab84f6d2-9583-47ec-99ba-8ff107786a8a
+        - 3d7e31e8-280e-4363-a9c3-db35bf95a37f
 
 compute:
     accelerators:

@@ -9,6 +9,8 @@ site:
     owner_contacts:
         - fblicharczyk@man.poznan.pl
         - ds@lists.cnaf.infn.it
+    owner_contacts_iam:
+        - a32e741e-1186-4697-9bde-279b7ba5b5fe
 
 compute:
     accelerators:
