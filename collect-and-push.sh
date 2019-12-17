@@ -35,7 +35,7 @@ cloud-info-provider-service \
     --os-project-domain-name default \
     --middleware openstack \
     --format cmdb \
-    --yaml-file /root/cloud-info-provider-sites/os.RECAS-BARI.yaml \
+    --yaml-file /cip/sites/os.RECAS-BARI.yaml \
     --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
                                                                                  --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
                                                                                  --cmdb-db-user $CMDB_USER \
@@ -53,7 +53,7 @@ for endpoint in mesos marathon chronos; do
         --mesos-framework $endpoint \
         --mesos-endpoint https://mesos.recas.ba.infn.it/${endpoint} \
         --oidc-auth-bearer-token $IAM_ACCESS_TOKEN \
-        --yaml-file /root/cloud-info-provider-sites/mesos.RECAS-BARI.yaml \
+        --yaml-file /cip/sites/mesos.RECAS-BARI.yaml \
         --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
                                                                                      --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
                                                                                      --cmdb-db-user $CMDB_USER \
@@ -88,7 +88,7 @@ cloud-info-provider-service \
     --property-image-gpu-driver gpu:driver:version \
     --property-image-gpu-cuda gpu:cuda:version \
     --property-image-gpu-cudnn gpu:cudnn:version \
-    --yaml-file /root/cloud-info-provider-sites/os.IFCA-LCG2.yaml \
+    --yaml-file /cip/sites/os.IFCA-LCG2.yaml \
     --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
                                                                                  --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
                                                                                  --cmdb-db-user $CMDB_USER \
@@ -104,7 +104,7 @@ for endpoint in mesos marathon; do
         --mesos-framework $endpoint \
         --mesos-endpoint https://mesos.cloud.ifca.es/${endpoint} \
         --oidc-auth-bearer-token $IAM_ACCESS_TOKEN \
-        --yaml-file /root/cloud-info-provider-sites/mesos.IFCA-LCG2.yaml \
+        --yaml-file /cip/sites/mesos.IFCA-LCG2.yaml \
         --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
                                                                                      --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
                                                                                      --cmdb-db-user $CMDB_USER \
@@ -129,7 +129,7 @@ done
 #        --mesos-framework $endpoint \
 #        --mesos-endpoint https://cereus.man.poznan.pl/api-${endpoint} \
 #        --oidc-auth-bearer-token $IAM_ACCESS_TOKEN \
-#        --yaml-file /root/cloud-info-provider-sites/mesos.PSNC.yaml \
+#        --yaml-file /cip/sites/mesos.PSNC.yaml \
 #        --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
 #                                                                                     --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
 #                                                                                     --cmdb-db-user $CMDB_USER \
@@ -154,7 +154,7 @@ for endpoint in marathon chronos; do
         --mesos-framework $endpoint \
         --mesos-endpoint https://mesos.ui.sav.sk/${endpoint} \
         --oidc-auth-bearer-token $IAM_ACCESS_TOKEN \
-        --yaml-file /root/cloud-info-provider-sites/mesos.IISAS-Bratislava.yaml \
+        --yaml-file /cip/sites/mesos.IISAS-Bratislava.yaml \
         --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
                                                                                      --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
                                                                                      --cmdb-db-user $CMDB_USER \
