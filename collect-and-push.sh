@@ -163,3 +163,29 @@ for endpoint in marathon chronos; do
                                                                                      --cmdb-db-pass $CMDB_PASS
     echo ""
 done
+
+###############
+## INFN-CNAF ##
+###############
+
+echo "***** INFN-CNAF *****"
+echo "Getting OpenStack data from https://horizon.cloud.cnaf.infn.it:5000/v3.."
+
+## [RECAS-BARI] CIP:Openstack with OIDC token
+cloud-info-provider-service \
+    --insecure \
+    --all-images \
+    --os-auth-type v3oidcaccesstoken \
+    --os-protocol oidc \
+    --os-identity-provider deep-hdc \
+    --os-access-token $IAM_ACCESS_TOKEN \
+    --os-auth-url https://horizon.cloud.cnaf.infn.it:5000/v3 \
+    --os-tenant-name DEEP \
+    --os-project-domain-name default \
+    --middleware openstack \
+    --format cmdb \
+    --yaml-file /cip/sites/os.INFN-CNAF.yaml \
+    --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
+                                                                                 --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
+                                                                                 --cmdb-db-user $CMDB_USER \
+                                                                                 --cmdb-db-pass $CMDB_PASS
