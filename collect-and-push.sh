@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 CMDB_ENDPOINT_READ=https://cloud-90-147-75-64.cloud.ba.infn.it/cmdb/
 CMDB_ENDPOINT_WRITE=https://cloud-90-147-75-64.cloud.ba.infn.it/couch/indigo-cmdb-v2
 IAM_ACCESS_TOKEN=`oidc-token deep-cip`
