@@ -1,0 +1,14 @@
+site:
+    name: PSNC
+    id: provider-PSNC
+    is_public: false
+    country: Poland
+    country_code: PL
+    roc: NGI_PL
+    owner_contacts:
+        - plociennik.marcin@gmail.com
+        - damian@man.poznan.pl
+        - ds@lists.cnaf.infn.it
+    owner_contacts_iam:
+        - 5cef5af2-8fd4-4209-b083-74bd8d56c817
+        - 38bf61bb-d1db-45e6-a36d-670e63aed301
