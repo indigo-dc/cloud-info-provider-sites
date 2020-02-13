@@ -55,6 +55,7 @@ compute:
             network_out: true
     images:
         defaults:
+            os_type: Linux
             platform: amd64
             gpu_driver: 'NA'
             gpu_cuda_driver: 'NA'
