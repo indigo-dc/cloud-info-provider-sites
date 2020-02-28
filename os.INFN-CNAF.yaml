@@ -41,6 +41,8 @@ compute:
             auth:
                 project_id: 498783f2b70848bd9b8bc1aa69700a89
             iam_organisation: deep-hdc
+            public_network_name: public
+            private_network_name: deep-net
     templates:
         defaults:
             platform: x86_64
