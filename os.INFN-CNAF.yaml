@@ -12,6 +12,7 @@ site:
         - a9135044-576f-4716-882a-1e0d57ec6a8a
 
 compute:
+    iam_enabled: true
     total_cores: 0
     total_ram: 0
     max_dedicated_ram: 0
