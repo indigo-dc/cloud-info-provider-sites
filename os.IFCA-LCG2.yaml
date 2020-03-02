@@ -48,6 +48,8 @@ compute:
                 project_id: 36fb9668c47148d9b1bedba88eb2460a 
             network_info: infiniband
             iam_organisation: deep-hdc
+            public_network_name: external
+            private_network_name: provider-2099
     templates:
         defaults:
             platform: amd64
