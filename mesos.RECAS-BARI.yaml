@@ -13,6 +13,7 @@ site:
         - f296fd17-3a66-4ba4-a06a-e1face1e0452
 
 compute:
+    iam_enabled: true
     accelerators:
         vendor: nvidia
         model: 1080TI # TITANX, TITANXSND
