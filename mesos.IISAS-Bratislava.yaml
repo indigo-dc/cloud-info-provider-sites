@@ -22,7 +22,7 @@ compute:
             total_cores: 30
         https://mesos.ui.sav.sk/marathon:
             service_parent_id: https://mesos.ui.sav.sk/mesos
-            load_balancer_ips: [147.213.75.181]
+            load_balancer_ips: [load-balancer.fedcloud.eu]
             local_volumes_host_base_path: /tmp
         https://mesos.ui.sav.sk/chronos:
             service_parent_id: https://mesos.ui.sav.sk/mesos
