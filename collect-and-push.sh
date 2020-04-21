@@ -116,6 +116,15 @@ for endpoint in mesos marathon; do
     echo ""
 done
 
+echo "Getting Oneprovider data from https://onezone.cloud.cnaf.infn.it/api/v3.."
+cloud-info-provider-service \
+    --middleware onedata \
+    --format cmdb \
+    --onezone-api-url https://onezone.cloud.cnaf.infn.it/api/v3 \
+    --oidc-x-auth-token $IAM_ACCESS_TOKEN \
+    --oidc-idp-prefix deep-hdc \
+    --yaml-file /cip/sites/oneprovider.IFCA-LCG2.yaml \
+    --template-dir /root/cloud-info-provider-deep/etc/templates/
 
 ###########
 ### PSNC ##
