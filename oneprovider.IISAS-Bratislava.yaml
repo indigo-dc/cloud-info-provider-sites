@@ -1,0 +1,18 @@
+site:
+    name: IISAS-Bratislava
+    id: provider-IISAS-Bratislava
+    is_public: false
+    country: Slovakia
+    country_code: SK
+    roc: NGI_SK
+    giis_url: "ldap://sbdii.ui.savba.sk:2170/Mds-Vo-name=IISAS-Bratislava,o=grid"
+    owner_contacts:
+        - tdviet@gmail.com
+        - ds@lists.cnaf.infn.it
+    owner_contacts_iam:
+        - 484f8033-ef66-45d7-9638-61a537c2dc28
+
+storage:
+    iam_enabled: true
+    endpoints:
+        oneprovider.fedcloud.eu:
