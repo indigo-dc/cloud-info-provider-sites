@@ -124,7 +124,10 @@ cloud-info-provider-service \
     --oidc-x-auth-token $IAM_ACCESS_TOKEN \
     --oidc-idp-prefix deep-hdc \
     --yaml-file /cip/sites/oneprovider.IFCA-LCG2.yaml \
-    --template-dir /root/cloud-info-provider-deep/etc/templates/
+    --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
+                                                                                 --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
+                                                                                 --cmdb-db-user $CMDB_USER \
+                                                                                 --cmdb-db-pass $CMDB_PASS
 
 ###########
 ### PSNC ##
@@ -183,7 +186,10 @@ cloud-info-provider-service \
     --oidc-x-auth-token $IAM_ACCESS_TOKEN \
     --oidc-idp-prefix deep-hdc \
     --yaml-file /cip/sites/oneprovider.IISAS-Bratislava.yaml \
-    --template-dir /root/cloud-info-provider-deep/etc/templates/
+    --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
+                                                                                 --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
+                                                                                 --cmdb-db-user $CMDB_USER \
+                                                                                 --cmdb-db-pass $CMDB_PASS
 
 
 ###############
