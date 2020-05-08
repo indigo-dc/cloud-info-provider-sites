@@ -1,0 +1,26 @@
+site:
+    name: AWS-us-east-1
+    id: AWS-us-east-1_a6f963ba-06d2-48f6-afaf-80303e717a82
+    is_public: true
+    country: Spain
+    country_code: ES
+    roc: NGI_IBERGRID
+    subgrid: SUBGRID 
+    owner_contacts:
+        - ruth.palmero@atos.net
+        - ari-deep-aws@lists.atosresearch.eu
+    owner_contacts_iam:
+        - ac4d375d-8bce-4cc7-9b45-d5824c9c071f
+
+compute:
+    provider_id: "AWS-us-east-1"
+    endpoints:
+        defaults:
+            middleware_version: ec2
+            api_endpoint_technology: webservice
+            production_level: production
+        https://ec2.us-east-1.amazonaws.com:
+    shares:
+        us-east-1:
+            auth: 
+                project_id: us-east-1-project
