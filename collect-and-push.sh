@@ -217,3 +217,20 @@ cloud-info-provider-service \
                                                                                  --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
                                                                                  --cmdb-db-user $CMDB_USER \
                                                                                  --cmdb-db-pass $CMDB_PASS
+
+###################
+## AWS US-east-1 ##
+###################
+
+echo "***** AWS US-east-1 *****"
+
+## [RECAS-BARI] CIP:Openstack with OIDC token
+cloud-info-provider-service \
+    --aws-region us-east-1 \
+    --middleware aws \
+    --format cmdb \
+    --yaml-file /cip/sites/aws.US-east-1.yaml \
+    --template-dir /root/cloud-info-provider-deep/etc/templates/ | bulksend2cmdb --cmdb-read-endpoint $CMDB_ENDPOINT_READ \
+                                                                                 --cmdb-write-endpoint $CMDB_ENDPOINT_WRITE \
+                                                                                 --cmdb-db-user $CMDB_USER \
+                                                                                 --cmdb-db-pass $CMDB_PASS
